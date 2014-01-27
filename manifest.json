@@ -1,9 +1,15 @@
 {
   "manifest_version": 2,
-  
+
   "name": "TrueRL",
   "description": "Modifies deceptive links to point to where they say they do.",
   "version": "1.0",
+
+  "icons": {
+    "16": "icons/truerl_16.png",
+    "48": "icons/truerl_48.png",
+    "128": "icons/truerl_128.png"
+  },
 
   "permissions": [
     "tabs", "<all_urls>"
