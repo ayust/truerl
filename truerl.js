@@ -1,7 +1,7 @@
 (function() {
   // Match things beginning with https://, http://, ftp://, file://, or things
   // that look like a domain name and possibly a path.
-  var urlPattern = /^(?:https?|ftp|file):\/\/\S+$|^[a-zA-Z0-9.-]+\.[a-z]{2,4}(?:\/\S*)?$/;
+  var urlPattern = /^(?:https?|ftp|file):\/\/\S+$|^[a-zA-Z0-9.-]+\.[a-z]{2,4}\/\S*$/;
   var schemePattern = /^[a-zA-Z0-9+.-]+(?=:\/\/)/;
 
   var enforceUrl = function(element, url) {
