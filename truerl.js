@@ -3,16 +3,7 @@
   // that look like a domain name and possibly a path.
   var urlPattern = /^(?:https?|ftp|file):\/\/\S+$|^[a-zA-Z0-9.-]+\.[a-z]{2,4}\/\S*$/;
   var schemePattern = /^[a-zA-Z0-9+.-]+(?=:\/\/)/;
-  
-  var isEllipsisPrefix = function(needle, haystack) {
-    // Checks to see if needle is contained in haystack,
-    // except for a trailing "..."
-    if(!/\.\.\.$/.test(needle)) {
-      return false;
-    }
-    var prefix = needle.substr(0, needle.length - 3);
-    return haystack.substr(0, prefix.length) == prefix;
-  }
+  var ellipsisPattern = /\.\.\./;
 
   var enforceUrl = function(element, url) {
     // Enforce that a given element has the specified url
@@ -26,7 +17,7 @@
     if(url == oldUrl) {
       return;
     }
-    if(isEllipsisPrefix(url, oldUrl)) {
+    if(ellipsisPattern.test(url)) {
       return;
     }
     element.setAttribute("href", url);
