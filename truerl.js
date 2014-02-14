@@ -3,7 +3,7 @@
   // that look like a domain name and possibly a path.
   var urlPattern = /^(?:https?|ftp|file):\/\/\S+$|^[a-zA-Z0-9.-]+\.[a-z]{2,4}\/\S*$/;
   var schemePattern = /^[a-zA-Z0-9+.-]+(?=:\/\/)/;
-  var ellipsisPattern = /\.\.\./;
+  var ellipsisPattern = /\.\.\.|…/;
 
   var enforceUrl = function(element, url) {
     // Enforce that a given element has the specified url
