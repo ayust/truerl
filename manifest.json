@@ -18,7 +18,8 @@
   "content_scripts": [
     {
       "matches": ["<all_urls>"],
-      "js": ["truerl.js"]
+      "js": ["truerl.js"],
+      "all_frames": true
     }
   ]
 }
